@@ -1,0 +1,1182 @@
+
+/* General Styles */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #f3f0f0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Background Blur */
+.background {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../Photo/gym_wallpaper3.jpg");  
+  background-size: cover; 
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  z-index: -1;
+  
+}
+
+/* Content Container */
+.content {
+  position: center;
+  z-index: 1;
+  padding: 0;
+  width: 1000px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 auto; 
+}
+
+/* Title Styles */
+.content h1, h2 {
+  color: #ff6600;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family:'Times New Roman', Times, serif;
+
+  
+}
+
+h1 {
+  font-size: 10em;
+  
+
+}
+
+h2 {
+  font-size: 3em;
+}
+
+/* Paragraph Styles */
+p {
+  margin: 20px 20px;
+  text-align:justify;
+  font-size: 3em;
+  line-height: 1.5;
+}
+
+
+/* Section Spacing */
+section {
+  margin-bottom: 40px;
+}
+
+/*Header Start */
+/*header start*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px 0px;
+  background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.5), transparent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo {
+  width: 100px;
+  cursor: pointer;
+}
+
+
+h2 {
+  font-size: 2.5em;
+  color: #cf5b0e;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.navigation a:active{
+  color: #f7327a;
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+
+.navigation a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navigation .btnLogin-popup {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+/* Dropdown Menu Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown .dropbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.iconServices {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+}
+
+.dropdown-content a {
+  
+  padding: 12px 24px;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.dropdown-content a:hover {
+  color: #f7327a;
+}
+
+.dropdown-content > a:active {
+  text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown .dropbtn:active {
+  background-color: grey;
+}
+
+@media (max-width: 1024px) {
+  header {
+    padding: 0px 30px;
+  }
+
+  
+
+  .navigation a {
+    font-size: 0.9em;
+    margin-left: 20px;
+  }
+
+  .navigation .btnLogin-popup {
+    width: 110px;
+    height: 35px;
+    font-size: 0.9em;
+    margin-left: 20px;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px 0;
+  }
+
+  .menu-toggle {
+    display: block; 
+}
+
+  .logo {
+    width: 70px;
+  }
+
+  /* Show toggle icon for screen sizes smaller than 768px */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    cursor: pointer;
+  }
+
+  .menu-toggle ion-icon {
+    font-size: 2.5em;
+    color: #fff;
+  }
+
+  .navigation {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+  }
+
+  .navigation.active {
+    left: 0;
+    padding: -100px 0;
+  }
+
+  .navigation a {
+    top: 0;
+    font-size: 1.3em;
+    margin: 20px 0;
+  }
+
+  .navigation .btnLogin-popup {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: none;
+    text-align: center;
+  }
+
+  .dropdown-content a {
+    padding: 10px 0;
+    font-size: 1.1em;
+    color: #fff;
+  }
+
+  .dropdown-content a:hover {
+    color: #f7327a;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0px 10px;
+  }
+  
+  .logo {
+    width: 60px;
+  }
+
+  .navigation a {
+    font-size: 1.2em;
+  }
+
+  .navigation .btnLogin-popup {
+    width: 100px;
+    height: 30px;
+    font-size: 1.1em;
+  }
+
+  .menu-toggle ion-icon {
+    font-size: 2.5em;
+  }
+}
+
+/* Toggle button animation */
+.menu-toggle {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.menu-toggle.open {
+  transform: rotate(90deg);
+}
+/*header end*/
+
+
+/*Hearder End */
+
+/* Block Styles */
+.content .block {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 40px;
+  animation: appear 0.95s ease-out;
+}
+
+
+/* Equipment Slider Styles */
+.equiment {
+  width: 70%;
+  height: 50vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.equiment .slider {
+  position: absolute;
+  width: 200px;
+  height: 330px;
+  top: 10%;
+  left: calc(50% - 100px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: autoRun 35s linear infinite;
+  
+}
+
+@keyframes autoRun {
+  from {
+      transform: perspective(1000px)  rotateY(0);
+  }
+  to {
+      transform: perspective(1000px)  rotateY(360deg);
+  }
+}
+
+.equiment .slider .item {
+  position:absolute;
+  inset: 0;
+  transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(550px);
+}
+
+.equiment .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
+  border-radius: 10px;
+  
+}
+
+.AU {
+  background-image: radial-gradient(rgba(161, 91, 64, 0.758), rgb(11, 11, 9));
+  background-repeat: no-repeat;
+  width: 1100px auto;
+  height: 700px;
+  border-radius: 20px;
+  padding: 0;
+  margin: 0;
+  padding-top: 50px;
+}
+
+/* Wrapper start */
+
+.wrapper{
+  
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.container{
+  height: 650px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
+}
+
+.card{
+  width: 70px;
+  border-radius: .75em;
+  background-size: cover;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 2reml;
+  margin: 5px 5px;
+  display: flex;
+  align-items: flex-end;
+  transition: .6 cubic-bezier(.28, -0.03 , 0, .99);
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+}
+
+.card > .row{
+  color:rgb(255, 94, 0);
+  background: linear-gradient(rgba(6, 6, 6, 0.758),rgba(161, 111, 91, 0.779));
+  display: flex;
+  flex-wrap: nowrap;
+  
+}
+
+.card > .row .icon{
+  background: #162938;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+}
+
+.card > .row > .description{
+  display: flex;
+  justify-content:left;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100px;
+  width:500px;
+  opacity: 0;
+  transform: translateY(30px) ;
+  transition-delay: .3s;
+  transition: all .3s ease;
+
+}
+
+.description p{
+  color: #f3f0f0;
+  padding: 0.2px;
+  font-size: 14.5px;
+  margin: 0;
+}
+
+.description h3{
+  text-transform: uppercase;
+  margin: 0%;
+}
+
+input{
+  display: none;
+}
+
+input:checked + label{
+  width: 600px;
+}
+
+input:checked + label .description{
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.card[for ="s1"]{
+  background-image: url("../Photo/gym_7.jpg");
+}
+
+.card[for ="s2"]{
+  background-image: url("../container/Expert\ Trainers.jpg");
+}
+
+.card[for ="s3"]{
+  background-image: url("../container/Group\ Classes.jpg");
+}
+
+.card[for ="s4"]{
+  background-image: url("../container/Nutritional\ Guidance.jpg");
+}
+
+.card[for ="s5"]{
+  background-image: url("../container/Wellness\ Programs.jpg");
+}
+
+.block .block3{
+  border-radius: 150px;
+  width: 1000px;
+  
+}
+
+.content .TTblock3{
+  background-color: #0e141a;
+}
+
+.content_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  width: 1000px;
+  margin: 0;
+  padding: 20px 0px;
+}
+
+
+
+.box h2 {
+  margin-bottom: 15px;
+  font-size:4em;
+  color: #f57621;
+}
+
+.box p {
+  font-size: 30px;
+  color: #fffdfd;
+}
+
+.box {
+  margin: 0 auto;
+  padding: 2em auto;
+  width: 1000px;
+  background: #0e141a;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.box::after, .box::before,
+.box2::after, .box2::before,
+.box3::after, .box3::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), orange, rgb(255, 102, 0));
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+
+.box::before,
+.box2::before,
+.box3::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+.box2, .box3 {
+  background: #0e141a;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.box2 p, .box3 p{
+  font-size: 2em;
+}
+
+.box2 h2, .box3 h2{
+  font-size: 3em;
+  padding-top: 20px;
+}
+
+/* Keep the existing padding, width, margin, etc. for .box2 and .box3 */
+.box2 {
+ 
+  width: 1000px;
+  padding-bottom: 10px;
+  border-radius: 50px; /* Retain original border-radius if needed */
+  margin-bottom: 20px;
+}
+
+.box3 {
+  width: 1000px;
+  padding-bottom: 10px;
+  margin: 20px 0px;
+  border-radius: 50px; /* Retain original border-radius if needed */
+}
+
+.box4{
+  width: 800px auto;
+  background-image: url("../Photo/man.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position-x:center ;
+}
+
+
+.GEWH{
+  font-size: 3em;
+  text-align: center;
+  color: #f57621;
+  font-family: 'Times New Roman', Times, serif;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.973), rgba(0, 0, 0, 0.062));
+  
+}
+
+.jklm{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.062), rgba(0, 0, 0, 0.973));
+  color: #16293800;
+  font-size: 3em;
+  margin-top: 30px;
+}
+
+
+
+
+.footer {
+  padding: 2rem 0;
+  background: #111;
+  color: #fff;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-links,
+.footer-social,
+.footer-contact {
+  flex: 1;
+  margin-bottom: 1.5rem;
+  min-width: 220px;
+}
+
+.footer-contact p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links ul ol{
+  padding-left: 20px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #f7327a;
+}
+
+.footer-social .social-links a {
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.4rem;
+  transition: all 0.3s ease;
+}
+
+.footer-social .social-links a:hover {
+  color: #f7327a;
+  border-color: #f7327a;
+}
+
+.footer-contact p {
+  margin: 0.5rem 0;
+}
+
+.footer-contact p i {
+  margin-right: 0.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0;
+  background: #000;
+ 
+  border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #bbb;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  header {
+    padding: 0px 30px;
+  }
+
+  .navigation a {
+    font-size: 0.9em;
+    margin-left: 20px;
+  }
+
+  .navigation .btnLogin-popup {
+    width: 110px;
+    height: 35px;
+    font-size: 0.9em;
+    margin-left: 20px;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px 0;
+  }
+
+  .menu-toggle {
+    display: block; 
+}
+
+  .logo {
+    width: 70px;
+  }
+
+  /* Show toggle icon for screen sizes smaller than 768px */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    cursor: pointer;
+   
+  }
+
+  .menu-toggle ion-icon {
+    font-size: 2.5em;
+    color: #fff;
+    
+  }
+
+  .navigation {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+  }
+
+  .navigation.active {
+    left: 0;
+    padding: -100px 0;
+  }
+
+  .navigation a {
+    top: 0;
+    font-size: 1.3em;
+    margin: 20px 0;
+  }
+
+  .navigation .btnLogin-popup {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: none;
+    text-align: center;
+  }
+
+  .dropdown-content a {
+    padding: 10px 0;
+    font-size: 1.1em;
+    color: #fff;
+  }
+
+  .dropdown-content a:hover {
+    color: #f7327a;
+  }
+}
+
+@media (min-width: 480px) {
+  header {
+    padding: 0px 10px;
+  }
+  
+  .logo {
+    width: 60px;
+  }
+
+  .navigation a {
+    font-size: 1.2em;
+  }
+
+  .navigation .btnLogin-popup {
+    width: 100px;
+    height: 30px;
+    font-size: 1.1em;
+  }
+
+  .menu-toggle ion-icon {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .content-bg .text {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .content-bg .text {
+    width: 50%;
+  }
+
+  .content-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .content-info {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/*mobile responsive */
+/* Mobile Responsive Styles */
+
+@media screen and (max-width: 480px) {
+  .content {
+      width: 100%;
+      padding: 20px;
+      height: 20%;
+      margin: 40px;
+
+  }
+
+  .menu-toggle{
+    left: 22%;
+    visibility:visible;
+  }
+
+  .navigation.active{
+    width: 480px;
+    
+  }
+
+
+  .content .AU{
+    height: 300px;
+    width: 480px;
+    margin: 0px ;
+  }
+
+  .AU h1{
+    font-size: 30px;
+  }
+
+  .AU p{
+    font-size: 15px;
+  }
+
+  .content_box{
+    max-width: 768px;
+    display: grid;
+    width: 300px;
+    padding: 0;
+  }
+
+  .box4{
+    height: 400px;
+    max-width:300px ;
+    width: 300px;
+    
+  }
+
+  .GEWH{
+    font-size: 2em;
+    margin: 0;
+  }
+
+  .jklm{
+    visibility: hidden;
+  }
+
+  .equiment {
+      width: 100%;
+      height: 650px;
+  }
+
+  .slider{
+    height: 100px;
+  }
+
+  .item{
+    height: 80px;
+    width: 80px;
+    padding-top: 80px;
+  }
+
+  .card {
+      width: 90%;
+      margin: 10px auto;
+  }
+
+  .box, .box2, .box3 {
+      width: 90%;
+      padding: 20px;
+      margin: 20px auto;
+  }
+
+  .box p, .box2 p, .box3 p{
+    font-size: 1em;
+  }
+
+  .box h2, .box2 h2, .box3 h2 {
+    font-size: 2em;
+  }
+
+
+  .container{
+    max-width: 400px;
+    height: 600px;
+    display: grid;
+  }
+
+  .card{
+    max-width: 300px;
+    
+  }
+
+  .card .description{
+    max-width: 200px;
+  }
+
+  .description p{
+    font-size: 0.7em;
+  }
+
+  .description h3{
+    font-size: 0.8em;
+  }
+
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-links, .footer-social, .footer-contact {
+      margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+      width: 80%;
+      padding: 20px;
+      height: 20%;
+      margin: 20px;
+  }
+
+  .menu-toggle{
+    left: 25%;
+    visibility: visible;
+  }
+
+  .navigation.active{
+    width: 768px;
+    
+  }
+
+
+
+  .content .AU{
+    height: 250px;
+    max-width: 700px;
+    margin: 20px ;
+    padding: 10px;
+  }
+
+  .AU h1{
+    font-size: 3em;
+  }
+  .AU p{
+    font-size: 2em;
+  }
+
+  .content_box{
+    max-width: 768px;
+    display: flex;
+    width: 570px;
+    padding: 0;
+    margin: 20px;
+  }
+
+  .box{
+    width: 400px;
+  }
+
+  .box4{
+    height: 400px;
+    max-width:700px ;
+    width: 620px;
+    
+  }
+
+  .GEWH{
+    font-size: 2em;
+    margin: 0;
+  }
+
+
+  .jklm{
+    visibility: hidden;
+  }
+  .equiment {
+      width: 100%;
+      height: 650px;
+  }
+
+  .slider{
+    height: 100px;
+  }
+
+  .item{
+    height: 80px;
+    width: 80px;
+    padding-top: 80px;
+  }
+
+  .card {
+      width: 90%;
+      margin: 10px auto;
+  }
+
+  .box, .box2, .box3 {
+      width: 90%;
+      padding: 20px;
+      margin: 20px auto;
+  }
+
+  .box p, .box2 p, .box3 p{
+    font-size: 1em;
+  }
+
+  .box h2, .box2 h2, .box3 h2 {
+    font-size: 2em;
+  }
+
+
+  .container{
+    max-width: 700px;
+    height: 600px;
+    display: grid;
+  }
+
+  .card{
+    max-width: 700px;
+    
+  }
+
+  .card .description{
+    max-width: 700px;
+    
+  }
+
+  .description p{
+    font-size: 0.8em;
+  }
+
+  .description h3{
+    font-size: 1.2em;
+    padding-top: 20px;
+  }
+
+  .footer-container {
+      flex-direction:row;
+      align-items: center;
+  }
+
+  .footer-links, .footer-social, .footer-contact {
+      margin-bottom: 20px;
+     
+  }
+}

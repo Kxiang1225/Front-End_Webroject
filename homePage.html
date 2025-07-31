@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Fitness</title>
+    <link rel="icon" href="Logo.png">
+    <style>
+        body {
+            background-image: url("Photo/gym_6.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        </style>
+    <link rel="stylesheet" href="allStyle/homePage.css">
+    <!--AOS link-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="../Frond end/allStyle/BackToTopButton.css">
+    <link rel="stylesheet" href="../Frond end/allStyle/cookies.css">
+
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <a href="homePage.html"><img src="Logo.png" alt="orange Logo" class="logo"></a>
+        <div class="menu-toggle">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <nav class="navigation">
+          <a href="homePage.html">Home</a>
+          <a href="about.html">About</a>
+          <div class="dropdown">
+            <a href="#" class="dropbtn">Services <span class="iconServices"><ion-icon name="caret-down-outline"></ion-icon></span></a>
+            <div class="dropdown-content">
+                <a href="workoutplan.html">Workout Plan</a>
+                <a href="trainer.html">Trainer</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+        </div>
+          <a href="contact.html">Contact</a>
+          <button class="btnLogin-popup" onclick="window.location.href='login.html?showLogin=true'">Login</button>
+        </nav> 
+
+        <script src="../Frond end/allJs/dropDownHeader.js"></script>
+    </header>
+
+    <!--Cookies start-->
+    <div id="cookies">
+        <div class="container_cookies">
+            <div class="subContainer_cookies">
+                <div class="cookies">
+                    <h3>Cookie Policy</h3>
+                    <p>This website uses cookies to ensure you get the best ecperience on our website.
+                        <a href="#">More Info</a>
+                    </p>
+                    <button id="cookies_Btn">Accept</button>
+                </div>
+            </div>
+        </div>
+        
+     
+    </div>
+    <script src="../Frond end/allJs/cookies.js"></script>
+    <!--Cookies end-->
+
+
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-aos="fade-up" data-aos-duration ="1400">Welcome to <span style="color: rgb(255, 123, 0); font-family: 'Times New Roman', Times, serif; font-style: italic;">Orange</span> Fitness</h1>
+            <p data-aos="fade-up" data-aos-duration="1600" data-aos-delay="300">Join us to achieve your fitness goals!</p>
+            <a data-aos="fade-up" data-aos-duration="1600" data-aos-delay="600" href="contact.html" class="cta-btn" >Join Now</a>
+        </div>
+
+       
+
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2 >Our Services</h2>
+      
+            <div class="service-cards">
+                <div class="card" data-aos="slide-up" data-aos-duration="1000">
+                    <img src="gif/personaltraining.gif" alt="Service 1">
+                    <h3 data-aos="fade-up" data-aos-duration="1600" data-aos-delay="600">Personal Training</h3>
+                    <p data-aos="fade-up" data-aos-duration="1600" data-aos-delay="600">One-on-one training with our experts.</p>
+                </div>
+
+                <div class="card" data-aos="slide-up" data-aos-duration="2000" data-aos-delay="300">
+                    <img src="gif/groupclass.gif" alt="Service 2">
+                    <h3 data-aos="fade-up" data-aos-duration="1600" data-aos-delay="600">Group Classes</h3>
+                    <p data-aos="fade-up" data-aos-duration="1600" data-aos-delay="600">Join our fun and energetic group classes.</p>
+                </div>
+                <div class="card" data-aos="slide-up" data-aos-duration="3000" data-aos-delay="600">
+                    <img src="gif/healthydiet.gif" alt="Service 3">
+                    <h3 data-aos="fade-up" data-aos-duration="1600" data-aos-delay="600">Nutrition Coaching</h3>
+                    <p data-aos="fade-up" data-aos-duration="1600" data-aos-delay="600">Get personalized nutrition advice.</p>
+                </div>
+            </div>
+        
+    </section>
+
+        <!--Benefit of Gym-->
+    <div class="beforeBenefit">
+        <h2 >Benefit of GYM</h2>
+    </div>
+    <section class="benefit">
+        
+        <div class="list" data-aos="fade-left">
+            
+            <div class="item">
+                <img src="Photo/physical fitness.jpg" alt="Physical Fitness">
+                <h3>Improved Physical Fitness</h3>
+            </div>
+            <div class="item">
+                <img src="Photo/stress release.jpg" alt="Stress Release">
+                <h3>Stress Relief and Mental Well-Being</h3>
+            </div>
+            <div class="item">
+                <img src="Photo/guidance and trainers.jpg" alt="Guidance and Trainers">
+                <h3>Expert Guidance from Trainers</h3>
+            </div>
+            <div class="item">
+                <img src="Photo/exercise_equipment.jpg" alt="Exercise Equipment">
+                <h3>Access to a Variety of Exercise Equipment</h3>
+            </div>
+            <div class="item">
+                <img src="Photo/bodyManagement.jpg" alt="Body Management">
+                <h3>Weight Management</h3>
+            </div>
+        </div>
+
+        <!--Buttons for Next or Previous-->
+        <div class="button">
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
+        </div>
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <script>
+                let list = document.querySelector('.benefit .list');
+                let items = document.querySelectorAll('.benefit .item');
+                let dots = document.querySelectorAll('.benefit .dots li');
+                let prev = document.getElementById('prev');
+                let next = document.getElementById('next');
+
+                let active = 0;
+                let lengthItems = items.length - 1;
+
+                next.onclick = function(){
+                    if (active + 1 > lengthItems) {
+                        active = 0;
+                    } else {
+                        active++;
+                    }
+                    reloadSlider();
+                }
+
+                prev.onclick = function(){
+                    if (active - 1 < 0) {
+                        active = lengthItems;
+                    } else {
+                        active--;
+                    }
+                    reloadSlider();
+                }
+
+                let refreshSlider = setInterval(() => { next.click() }, 3000);
+
+                function reloadSlider(){
+                    let checkLeft = items[active].offsetLeft;
+                    list.style.left = -checkLeft + 'px';
+
+                    let lastActiveDot = document.querySelector('.benefit .dots li.active');
+                    lastActiveDot.classList.remove('active');
+                    dots[active].classList.add('active');
+
+                    clearInterval(refreshSlider);
+                    refreshSlider = setInterval(() => { next.click() }, 3000);
+                }
+
+                dots.forEach((li, key) => {
+                    li.addEventListener('click', function(){
+                        active = key;
+                        reloadSlider();
+                    });
+                });
+
+        </script>
+
+
+    </section>
+
+
+    <!--Watch Our Video-->
+    <div class="beforeVideo" ><h2>"Watch Our Video!"</h2></div>
+    <section class="VideoAd">
+       
+        <div class="video_Ad" >
+            <video width="1000px" height="600px" autoplay controls muted>
+                <source src="https://youtu.be/CogBCv0SYpYcontrols=1">
+                <source src="video/Orange.mp4" type="video/mp4">
+                <source src="video/Orange.ogg" type="video/ogg">
+            </video> 
+        </div>
+        <div class="descript" >
+            <h2 data-aos="zoom-in-left" data-aos-duration="800">Experience the Difference!!!</h2>
+            <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">Ready to transform your body and boost your confidence? At
+                <span>Orange Fitness</span>, we offer state-of-the-art facilities,
+                diverse classes, and expert trainers to help you reach
+                your fitness goals. Whether you're a beginner or an 
+                athlete, our supportive community is here to guide and 
+                motivate you. Join us today and start your journey to a 
+                healthier, happier you!</p>
+        </div>
+    </section>
+
+    <!--Slider of Before and After-->
+    <section class="transformations-slider">
+        <div class="subBackground">
+        <h2>“Transform Your Life: Real Success Stories”</h2>
+        <div class="slider">
+            
+            <div class="slide">
+                <img src="Photo/beforeGym.jpg" alt="Before Photo">
+                
+            </div>
+            <div class="slide">
+                
+                <img src="Photo/afterGym.jpg" alt="After Photo">
+               
+            </div>
+
+        
+          
+            <!-- Repeat for more transformations -->
+        </div>
+        <h3 >Weight loss is a journey, not a destination. Stay committed, stay strong, and you'll achieve your goals!</h3>
+         </div>
+
+         <button onclick="topFunction()" id="myBtn" title="Go to top"><b>Back to Top</b></button>
+    </section>
+
+
+
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="homePage.html">Home</a></li>
+                    <li>Services
+                      <ol>
+                        <lo><a href="workoutplan.html">-Workout Plan</a></lo><br>
+                        <lo><a href="trainer.html">-Trainer</a></lo><br>
+                        <lo><a href="pricing.html">-Pricing</a></lo>
+                      </ol>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/orangefitnesscentre1" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtu.be/CogBCv0SYpY" class="youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/orange_fitness_kampar/" class="instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown, USA</p>
+                <p><i class="fas fa-phone-alt"></i> +1 (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@example.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <!--java script link-->
+    <!--JS FOR AOS-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init(
+        {offset:1,
+
+        });
+    </script>
+    <!--Back to top-->
+    <script src="../Frond end/allJs/backToTop.js"></script>
+
+
+</body>
+</html>

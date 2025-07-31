@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife Gym</title>
+    <link rel="icon" href="Logo.png">
+    <style>
+      
+    </style>
+    <link rel="stylesheet" href="allStyle/pricing.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="../Frond end/allStyle/BackToTopButton.css">
+  
+</head>
+
+<body>
+    <script src="../Frond end/allJs/pricing.js"> </script>
+    <header>
+        <a href="homePage.html"><img src="Logo.png" alt="orange Logo" class="logo"></a>
+        <div class="menu-toggle">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <nav class="navigation">
+          <a href="homePage.html">Home</a>
+          <a href="about.html">About</a>
+          <div class="dropdown">
+            <a href="#" class="dropbtn">Services <span class="iconServices"><ion-icon name="caret-down-outline"></ion-icon></span></a>
+            <div class="dropdown-content">
+                <a href="workoutplan.html">Workout Plan</a>
+                <a href="trainer.html">Trainer</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+        </div>
+          <a href="contact.html">Contact</a>
+          <button class="btnLogin-popup" onclick="window.location.href='login.html?showLogin=true'">Login</button>
+        </nav> 
+
+        <script src="../Frond end/allJs/dropDownHeader.js"></script>
+      </header>
+
+        <div class="navigation-buttons">
+            <button onclick="scrollToSection('membership-section')" class="nav-btn">Membership Options</button>
+            <button onclick="scrollToSection('trainer-section')" class="nav-btn">Personal Trainer Options</button>
+            <p>Please click your option</p>
+        </div>
+
+        <main class="container">  
+
+            <section id="membership-section">  
+                <div class="member">
+                    <h3 data-aos="fade-up" data-aos-duration="1000">Membership Options</h3>
+                </div> 
+
+                <div class="membership-options" > 
+                    <div class="membership" data-aos="fade-up" data-aos-duration="2000">
+                        <h3>Day Ticket</h3>  
+                            <li class="price bottom-bar">&dollar;9.99</li>
+                            <p>Full access to all gym facilities</p>
+                            <p>Access to all fitness classes</p>
+                            <p>Free locker usage </p>
+                                <a href="https://www.touchngo.com.my/" target="_blank">
+                                    <button class="btn">Buy now</button>
+                                </a> 
+                    </div>
+                    <div class="membership" data-aos="fade-up" data-aos-duration="2000" >
+                        <h3>Week Ticket</h3> 
+                            <li class="price bottom-bar">&dollar;39.99</li>
+                            <p>Full access to all gym facilities for 7 days</p>
+                            <p>Access to all fitness classes</p>
+                            <p>Free locker usage </p>
+                            <p>One complimentary fitness consultations</p>
+                                <a href="https://www.touchngo.com.my/" target="_blank">
+                                    <button class="btn">Buy now</button>
+                                </a>
+                    </div>
+                    <div class="membership" data-aos="fade-up" data-aos-duration="2000">
+                        <h3>Month Ticket</h3>
+                            <li class="price bottom-bar">&dollar;119.99</li>
+                            <p>Full access to all gym facilities for 30 days</li>
+                            <p>Access to all fitness classes</p>
+                            <p>Free locker usage</p>
+                            <p>Two complimentary fitness consultations</p>
+                            <p>10% discount personal training sessions</p>
+                                <a href="https://www.touchngo.com.my/" target="_blank">
+                                    <button class="btn">Buy now</button>
+                                </a>   
+                    </div>
+                    <div class="membership" data-aos="fade-up" data-aos-duration="2000">
+                        <h3>Year Ticket</h3>
+                            <li class="price bottom-bar">&dollar;999.99</li>
+                            <p>Full access to all gym facilities for 365 days</p>
+                            <p>Access to all fitness classes</p>
+                            <p>Free locker usage</p>
+                            <p>Monthly fitness consultation</p>
+                            <p>20% discount personal training sessions</p>
+                                <a href="https://www.touchngo.com.my/" target="_blank">
+                                    <button class="btn">Buy now</button>
+                                </a>    
+                    </div>
+                </div>
+            </section> 
+
+            <section id="trainer-section">
+                <div class="member" data-aos="zoom-in-up" data-aos-duration="2000">
+                    <h3>Personal Trainer Options</h3>
+                </div>
+
+                <div class="trainer-cards">
+                    <div class="trainer-card" data-aos="zoom-in-up" data-aos-duration="2000">
+                        <h4>Junior Trainer</h4>
+                        <p><strong>Sessions:</strong> 10 Sessions</p>
+                        <p><strong>Class Type:</strong> Basic Fitness Training</p>
+                        <p><strong>Hours per Session:</strong> 1 Hour</p>
+                        <p><strong>Price per Session: &dollar;30</strong></p>
+                        <p><strong>Package Price: &dollar;280 </strong> (10% discount on full package)</p>
+                            <a href="https://www.touchngo.com.my/" target="_blank">
+                                <button class="btn">Buy now</button>
+                            </a> 
+                    </div>
+
+                    <div class="trainer-card" data-aos="zoom-in-up" data-aos-duration="2000">
+                        <h4>Senior Trainer</h4>
+                        <p><strong>Sessions:</strong> 15 Sessions</p>
+                        <p><strong>Class Type:</strong> Intermediate Fitness & Strength Training</p>
+                        <p><strong>Hours per Session:</strong> 1.5 Hours</p>
+                        <p><strong>Price per Session: &dollar;50</strong></p>
+                        <p><strong>Package Price: &dollar;675 </strong>(10% discount on full package)</p>
+                            <a href="https://www.touchngo.com.my/" target="_blank">
+                                <button class="btn">Buy now</button>
+                            </a>
+                    </div>
+
+                    <div class="trainer-card" data-aos="zoom-in-up" data-aos-duration="2000">
+                        <h4>Master Trainer</h4>
+                        <p><strong>Sessions:</strong> 20 Sessions</p>
+                        <p><strong>Class Type:</strong> Advanced Personal Training & Bodybuilding</p>
+                        <p><strong>Hours per Session:</strong> 2 Hours</p>
+                        <p><strong>Price per Session: &dollar;80</strong></p>
+                        <p><strong>Package Price: &dollar;1,440</strong>  (10% discount on full package)</p>
+                            <a href="https://www.touchngo.com.my/" target="_blank">
+                                <button class="btn">Buy now</button>
+                            </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact">
+                <h2>Join Us Today!</h2>
+                <p>Ready to take the next step in your fitness journey? Visit us at our location or sign up online.</p>
+                <p>For any questions, feel free to contact us at <a href="tel:1234567890">(123) 456-7890</a> or email us at <a href="mailto:info@fitlifegym.com">info@fitlifegym.com</a>.</p>
+            </section>
+
+        </main>
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><b>Back to Top</b></button>
+        <div class="contact-footer">
+            <div class="footer-container">
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="homePage.html">Home</a></li>
+                        <li>Services
+                          <ol>
+                            <lo><a href="workoutplan.html">-Workout Plan</a></lo><br>
+                            <lo><a href="trainer.html">-Trainer</a></lo><br>
+                            <lo><a href="pricing.html">-Pricing</a></lo>
+                          </ol>
+                        </li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/orangefitnesscentre1" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtu.be/CogBCv0SYpY" class="youtube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/orange_fitness_kampar/" class="instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown, USA</p>
+                    <p><i class="fas fa-phone-alt"></i> +1 (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@example.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+            </div>
+        </div>
+
+        <script src="allJs/pricing.js"></script>
+           <!--JS FOR AOS-->
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+            AOS.init(
+                {offset:1,
+        
+                });
+            </script>
+        <script src="../Frond end/allJs/backToTop.js"></script>
+
+
+
+
+      
+        
+</body>
+</html>

@@ -1,0 +1,934 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+/* General Styles */
+body {
+ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #8a8989;
+    
+}
+
+/* Header Styles */
+
+/*header start*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px 80px;
+    background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.5), transparent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+  }
+  
+  .logo {
+    width: 100px;
+    cursor: pointer;
+  }
+  
+  
+  h2 {
+    font-size: 2em;
+    color: #fff;
+  }
+  
+  .navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+  }
+  
+  .navigation a:active{
+    color: #f7327a;
+  }
+  
+  .navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+  }
+  
+  .navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  .navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+  }
+  
+  .navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #000;
+  }
+  
+  
+  /* Dropdown Menu Styles */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown .dropbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+  
+  .iconServices {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  
+  }
+  
+  .dropdown-content a {
+    
+    padding: 12px 24px;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 16px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .dropdown-content a:hover {
+    color: #f7327a;
+  }
+  
+  .dropdown-content > a:active {
+    text-decoration: underline;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown .dropbtn:active {
+    background-color: grey;
+  }
+  
+  
+  @media (max-width: 768px) {
+    header {
+      padding: 20px 0;
+    }
+  
+    .menu-toggle {
+      display: block; 
+  }
+  
+    .logo {
+      width: 70px;
+    }
+  
+    /* Show toggle icon for screen sizes smaller than 768px */
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 25px;
+      cursor: pointer;
+    }
+  
+    .menu-toggle ion-icon {
+      font-size: 2.5em;
+      color: #fff;
+    }
+  
+    .navigation {
+      position: fixed;
+      top: 80px;
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s ease;
+    }
+  
+    .navigation.active {
+      left: 0;
+      padding: -100px 0;
+      width: 768px;
+    }
+  
+    .navigation a {
+      top: 0;
+      font-size: 1.3em;
+      margin: 20px 0;
+    }
+  
+    .navigation .btnLogin-popup {
+      width: 80%;
+      margin-top: 20px;
+      font-size: 1.2em;
+      text-align: center;
+    }
+  
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+      background: none;
+      text-align: center;
+    }
+  
+    .dropdown-content a {
+      padding: 10px 0;
+      font-size: 1.1em;
+      color: #fff;
+    }
+  
+    .dropdown-content a:hover {
+      color: #f7327a;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header {
+      padding: 0px 10px;
+    }
+    
+    .logo {
+      width: 60px;
+    }
+  
+    .navigation a {
+      font-size: 1.2em;
+    }
+  
+    .navigation .btnLogin-popup {
+      width: 100px;
+      height: 30px;
+      font-size: 1.1em;
+    }
+  
+    .menu-toggle ion-icon {
+      font-size: 2.5em;
+    }
+
+    .navigation.active{
+      padding: 0;
+      width: 480px;
+    }
+    
+  }
+  
+  /* Toggle button animation */
+  .menu-toggle {
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      visibility: hidden;
+  }
+  
+  .menu-toggle.open {
+    transform: rotate(90deg);
+  }
+/*header end*/
+
+
+/* Hero Section Styles */
+.hero {
+    background-image: url("../Photo/gym_6.jpg");
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 150px 20px;
+    height: 80vh;
+    background-repeat: no-repeat;
+   
+}
+
+.hero-content h1 {
+    font-size: 8em;
+    
+}
+
+.hero-content p {
+    font-size: 3em;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.cta-btn {
+    background-color: #e50914;
+    color: rgb(255, 255, 255);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.cta-btn:hover {
+    background-color: #d40813;
+}
+
+/* Services Section Styles */
+.services {
+    background-repeat: no-repeat;
+    background-color: #8a8989;
+    text-align: center;
+    background-image: url("../Photo/gym.jpg");
+    background-position: center;
+    height: 82vh;
+    
+}
+
+
+
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.616);
+    padding-bottom: 350px ;
+    padding-top: 20px;
+    
+    
+}
+
+.card {
+    background: linear-gradient(rgb(0, 0, 0),rgb(194, 107, 7));
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.card:hover{
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.5); 
+    margin-left: 20px;
+    margin-right: 20px;
+    z-index: 10;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    
+}
+
+.services h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 5em;
+    font-style: bold;
+    color: rgb(230, 126, 7);
+    background-color: rgba(0, 0, 0, 0.616);
+    padding: 20px 20px;
+    margin: 0px;
+}
+
+.service-cards p{
+    font-size: 1.8em;
+}
+
+.card h3 {
+    margin-top: 15px;
+    font-size: 2em;
+}
+
+
+/* Footer Styles */
+.footer {
+    padding: 2rem 0;
+    background: #111;
+    color: #fff;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .footer-links,
+  .footer-social,
+  .footer-contact {
+    flex: 1;
+    margin-bottom: 1.5rem;
+    min-width: 220px;
+  }
+  
+  .footer-contact p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links ul ol{
+    padding-left: 20px;
+  }
+  
+  .footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #f7327a;
+  }
+  
+  .footer-social .social-links a {
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.4rem;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-social .social-links a:hover {
+    color: #f7327a;
+    border-color: #f7327a;
+  }
+  
+  .footer-contact p {
+    margin: 0.5rem 0;
+  }
+  
+  .footer-contact p i {
+    margin-right: 0.5rem;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 1rem 0;
+    background: #000;
+    font-size: 0.85rem;
+    border-top: 1px solid #333;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    color: #bbb;
+  }
+
+/*Video */
+.VideoAd{
+   
+    width: auto;
+    height: 620px;
+   
+    background-position: center;
+    text-align:center ;
+    display: flex;
+    justify-content:left;
+    align-items: flex-start;
+    background-repeat: no-repeat;
+    
+    
+}
+
+.descript{
+    background-color: rgba(0, 0, 0, 0.589);
+    height: 690.5px;
+    width: 100%;
+   
+}
+
+.descript h2{
+    font-size: 3em;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin: 0;
+    color:rgb(185, 102, 6);
+    transform: scale(1.2);
+}
+
+.descript p{
+    font-size: 2em;
+    text-align:justify;
+    padding: 20px;
+    color: rgba(250, 200, 149, 0.932);
+}
+
+.descript span{
+    color: orange;
+    font-style: italic;
+}
+
+.beforeVideo h2{
+    font-size: 4em;
+    text-align:center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.856);
+    margin: 0;
+    height: 100px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    padding: 20px;
+
+}
+
+
+.VideoAd{
+    margin:0;
+    height: 80vh;
+ 
+}
+
+.VideoAd video{
+    background-color: rgba(0, 0, 0, 0.589);
+    height: 690px;
+    position: relative;
+    
+   
+    
+}
+
+/* Transformations Slider Container */
+.transformations-slider {
+    
+    margin: 0 auto; /* Center the slider */
+    background-repeat: no-repeat;
+    background-image:url("../Photo/gym.jpg");
+    background-size:fill;
+    background-position: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+    
+}
+
+.transformations-slider .subBackground{
+    height: 900px;
+    width: 100%;
+    position:relative;
+    background-color: #333333c2;
+    margin: 0;
+    
+}
+
+.transformations-slider h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.733);
+    padding: 25px ;
+    color: #ff7f00;
+    margin: 0;
+    height: 100px;
+    
+
+}
+
+.transformations-slider h3{
+    font-size: 2em;
+    text-align: justify;
+    background-color: rgba(0, 0, 0, 0.733);
+    padding: 40px ;
+    color: #ff7f00;
+    margin: 0;
+    height: auto;
+    padding-bottom: 100px;
+    
+}
+
+/* Slider Wrapper */
+.slider {
+    display: flex;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snapping behavior */
+    /* Space between slides */ 
+}
+
+/* Individual Slide */
+.slide {
+    flex: 0 0 100%; /* Each slide takes up 80% of the container's width */
+    max-width: 1800px; /* Maximum width for larger screens */
+    position:relative;
+    scroll-snap-align: start; /* Ensure snapping at the start of each slide */
+    background-color: #0e0903ef;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Slide Images */
+.slide img {
+    width: 100%;
+    max-width: 500px; /* Set a maximum width for images */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit:cover;
+    
+}
+
+
+/* Horizontal Scrollbar Styling */
+.slider::-webkit-scrollbar {
+    height: 12px;
+}
+
+.slider::-webkit-scrollbar-thumb {
+    background-color: #ff7f00; /* Orange color matching the gym's theme */
+    border-radius: 4px;
+}
+
+.slider::-webkit-scrollbar-track {
+    background-color: #00000094;
+    border-radius: 4px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .slide {
+        flex: 0 0 100%; /* Take up full width on smaller screens */
+    }
+    
+    .slider {
+        gap: 15px; /* Reduce gap on smaller screens */
+    }
+}
+
+.VideoAd > .Video_Ad{
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range-end: 200px;
+}
+
+@keyframes fade-in{
+    from{scale: .8; opacity: 0;}
+    to{scale: 1; opacity: 1;}
+}
+
+/*Benefit of GYM */
+.benefit {
+    width: 1600px;
+    max-width: 100vw;
+    height: 700px;
+    margin: auto;
+    position: relative;
+}
+
+.list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    width: max-content;
+    transition: 1s ease;
+}
+
+.list img {
+    width: 1600px;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.beforeBenefit {
+    position: relative;
+    margin: 0;
+    padding:0;
+    text-align: center;
+    background-image: url("../Photo/gym.jpg");
+    background-position: center;
+}
+
+.beforeBenefit h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4em;
+    margin: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.616),rgba(0, 0, 0, 0.87));
+    padding: 10px;
+    color:#ff7f00
+}
+
+.button {
+    position: absolute;
+    top: 45%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 65px;
+}
+
+.button button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ffffff90;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    color: #fff;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.dots li {
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 50%;
+    transition: 1s ease;
+    cursor: pointer;
+}
+
+.dots li.active {
+    width: 30px;
+}
+
+.list h3{
+    position: absolute;
+    top: 75%;
+    font-size: 2.5em;
+    margin-left: 20px;
+    color: #ff7f00;
+    background: rgba(61, 30, 1, 0.897);
+    padding: 20px;
+    border-radius: 50px;
+}
+
+/*Mobile responsive */
+
+@media screen and (max-width: 768px) {
+  .hero-content h1 {
+      font-size: 4em;
+  }
+  
+  .menu-toggle{
+    visibility: visible;
+    left: 23%;
+  }
+
+
+  .hero-content p {
+      font-size: 2em;
+  }
+  
+  .services{
+    height: 400px;
+  }
+
+  .services h2{
+    font-size: 2.5em;
+  }
+
+  .service-cards {
+      display: flex;
+      flex-direction:row;
+      padding-bottom: 100px;
+      height: auto;
+  }
+  
+  .card {
+      width: 220px;
+      margin: 10px;
+      height: 200px;
+  }
+
+  .card h3{
+    font-size: 1em;
+  }
+
+  .card p{
+    font-size: 0.8em;
+  }
+
+  .transformations-slider h2, .transformations-slider h3 {
+      font-size: 1.5em;
+  }
+  
+  .beforeBenefit h2 {
+      font-size: 2.5em;
+  }
+  
+  .benefit {
+      height: 500px;
+  }
+  
+  .list h3 {
+      font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .hero-content h1 {
+    font-size: 3em;
+    margin: 20px;
+}
+
+.menu-toggle{
+  visibility: visible;
+  left: 21.5%;
+}
+
+.hero{
+  padding-bottom: 0;
+  height: 600px;
+}
+
+.hero-content{
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+
+.hero-content p {
+    font-size: 2em;
+}
+
+.services{
+  height: 800px;
+
+}
+
+.services h2{
+  font-size: 2.5em;
+}
+
+.service-cards {
+    display: flex;
+    flex-direction:column;
+    padding-bottom: 100px;
+    height: auto;
+    padding-left: 100px;
+  
+}
+
+.card {
+    width: 220px;
+    margin: 10px;
+    height: 200px;
+}
+
+.card h3{
+  font-size: 1em;
+}
+
+.card p{
+  font-size: 0.8em;
+}
+
+  .transformations-slider h2, .transformations-slider h3 {
+      font-size: 1.2em;
+  }
+  
+  .beforeBenefit h2 {
+      font-size: 2em;
+  }
+  
+  .benefit {
+      height: 300px;
+      width: 400px;
+      margin-right: 100px;
+      padding-left: 40px;
+  }
+
+  .button{
+    size: 30px;
+    gap: 300px;
+    padding: 0;
+  }
+
+  .dots {
+    visibility: hidden;
+  }
+  
+  .beforeVideo h2{
+    font-size: 1.8em;
+    padding-right: 50px;
+    visibility: hidden;
+    height: 0;
+  }
+
+  .VideoAd{
+    visibility: hidden;
+    height: 0;
+  }
+
+  .list h3 {
+      font-size: 1.2em;
+  }
+  
+}

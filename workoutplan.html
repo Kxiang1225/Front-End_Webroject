@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness</title>
+  <style>
+    body {
+     padding-top: 100px; /* Adjust this value to be the height of your header */
+    }
+    </style>
+  <link rel="stylesheet" href="allStyle/workout.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <a href="homePage.html"><img src="Logo.png" alt="orange Logo" class="logo"></a>
+    <div class="menu-toggle">
+      <ion-icon name="menu-outline"></ion-icon>
+    </div>
+    <nav class="navigation">
+      <a href="homePage.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Services <span class="iconServices"><ion-icon name="caret-down-outline"></ion-icon></span></a>
+        <div class="dropdown-content">
+            <a href="workoutplan.html">Workout Plan</a>
+            <a href="trainer.html">Trainer</a>
+            <a href="pricing.html">Pricing</a>
+        </div>
+    </div>
+      <a href="contact.html">Contact</a>
+      <button class="btnLogin-popup" onclick="window.location.href='login.html?showLogin=true'">Login</button>
+    </nav> 
+  </header>
+
+
+    <section id="WPintro" class="WPintro">
+        <div class="overlay">
+            <h1>Workout Plans</h1>
+            <p></p>
+            <p>
+                "The most comprehensive database of free workout routines
+                anywhere! Follow the instruction from the workout plans to
+                achieve your goal!"
+            </p>
+            <p></p>
+        </div>
+    </section>
+
+    <section id="WPcontent" class="WPcontent">
+        <h2 class="taxonomy-heading">Workout Categories</h2>
+        <p class="subheading-text" style="color: white;">
+            Choose a category that best suits the workout you're
+            searching for.
+        </p>
+        <div class="mainpage-category-list">
+            <div class="grid-x small-up-2">
+                <div class="cell">
+                    <a href="men.html">
+                      <div class="flip-container">
+                        <div class="flipper">
+                          <div class="front">
+                            <img src="Photo/workoutsformen.jpg" alt="Workouts For Men">
+                          </div>
+                          <div class="back">
+                            <img src="Photo/workoutsformen.jpg" alt="Back Side">
+                            <h3 class="image-text">Workouts For Men </h3>
+                            <a href="men.html">
+                              <h4 class="image-text">More Info</h4>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <p><br></p>
+                </div>
+                <div class="cell">
+                    <a href="women.html">
+                      <div class="flip-container">
+                        <div class="flipper">
+                          <div class="front">
+                            <img src="Photo/workoutsforwomen.jpg" alt="Workouts For Women">
+                          </div>
+                          <div class="back">
+                            <img src="Photo/workoutsforwomen.jpg" alt="Back Side">
+                            <h3 class="image-text">Workouts For Women </h3>
+                            <a href="women.html">
+                              <h4 class="image-text">More Info</h4>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <p><br></p>
+                </div>
+                <div class="cell">
+                    <a href="musclebuilding.html">
+                      <div class="flip-container">
+                        <div class="flipper">
+                          <div class="front">
+                            <img src="Photo/musclebuilding.jpg" alt="Musclebuilding">
+                          </div>
+                          <div class="back">
+                            <img src="Photo/musclebuilding.jpg" alt="Back Side">
+                            <h3 class="image-text">Musclebuilding</h3>
+                            <a href="musclebuilding.html">
+                              <h4 class="image-text">More Info</h4>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <p><br></p>
+                </div>
+                <div class="cell">
+                    <a href="fatloss.html">
+                      <div class="flip-container">
+                        <div class="flipper">
+                          <div class="front">
+                            <img src="Photo/fatloss.jpg" alt="Fatloss">
+                          </div>
+                          <div class="back">
+                            <img src="Photo/fatloss.jpg" alt="Back Side">
+                            <h3 class="image-text">Fatloss</h3>
+                            <a href="fatloss.html">
+                              <h4 class="image-text">More Info</h4>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <p><br></p>
+                </div>
+                <div class="cell">
+                    <a href="athome.html">
+                      <div class="flip-container">
+                        <div class="flipper">
+                          <div class="front">
+                            <img src="Photo/athome.jpg" alt="Athome">
+                          </div>
+                          <div class="back">
+                            <img src="Photo/athome.jpg" alt="Back Side">
+                            <h3 class="image-text">At home</h3>
+                            <a href="athome.html">
+                              <h4 class="image-text">More Info</h4>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <p><br></p>
+                </div>
+                <div class="cell">
+                    <a href="beginner.html">
+                      <div class="flip-container">
+                        <div class="flipper">
+                          <div class="front">
+                            <img src="Photo/beginner.jpg" alt="Beginner">
+                          </div>
+                          <div class="back">
+                            <!-- You can add an alternative image or content for the back side -->
+                            <img src="Photo/beginner.jpg" alt="Back Side">
+                            <h3 class="image-text">Beginner</h3>
+                            <a href="beginner.html">
+                              <h4 class="image-text">More Info</h4>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <p><br></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+          <div class="footer-container">
+              <div class="footer-links">
+                  <h3>Quick Links</h3>
+                  <ul>
+                    <li><a href="homePage.html">Home</a></li>
+                    <li>Services
+                      <ol>
+                        <lo><a href="workoutplan.html">-Workout Plan</a></lo><br>
+                        <lo><a href="trainer.html">-Trainer</a></lo><br>
+                        <lo><a href="pricing.html">-Pricing</a></lo>
+                      </ol>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+              </div>
+              <div class="footer-social">
+                  <h3>Follow Us</h3>
+                  <div class="social-links">
+                      <a href="https://www.facebook.com/orangefitnesscentre1" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                      <a href="https://youtu.be/CogBCv0SYpY" class="youtube"><i class="fab fa-youtube"></i></a>
+                      <a href="https://www.instagram.com/orange_fitness_kampar/" class="instagram"><i class="fab fa-instagram"></i></a>
+                  </div>
+              </div>
+              <div class="footer-contact">
+                  <h3>Contact Us</h3>
+                  <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown, USA</p>
+                  <p><i class="fas fa-phone-alt"></i> +1 (123) 456-7890</p>
+                  <p><i class="fas fa-envelope"></i> info@example.com</p>
+              </div>
+          </div>
+          <div class="footer-bottom">
+              <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+          </div>
+      </div>
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><b>Back to Top</b></button>
+    </section>
+    <script src="../Frond end/allJs/backToTop.js"></script>
+  </body>
+</html>  

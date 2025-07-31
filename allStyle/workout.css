@@ -1,0 +1,807 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+section{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  justify-content: center;
+  align-items: center;
+  background-image: url('Photo/home-workout.jpg');
+  background-size: cover; /* Ensures the background image covers the whole screen */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background from repeating */
+}
+
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px 20px 90px 20px;
+  background: linear-gradient(to bottom, black, rgba(22, 11, 11, 0.877), transparent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo {
+  width: 100px;
+  cursor: pointer;
+}
+
+
+h2 {
+  font-size: 2em;
+  color: #fff;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.navigation a:active{
+  color: #f7327a;
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+
+.navigation a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navigation .btnLogin-popup {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+/* Dropdown Menu Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown .dropbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.iconServices {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+}
+
+.dropdown-content a {
+  
+  padding: 12px 24px;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.dropdown-content a:hover {
+  color: #f7327a;
+}
+
+.dropdown-content > a:active {
+  text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown .dropbtn:active {
+  background-color: grey;
+}
+
+@media (max-width: 1024px) {
+  header {
+    padding: 0px 30px;
+  }
+
+  
+
+  .navigation a {
+    font-size: 0.9em;
+    margin-left: 20px;
+  }
+
+  .navigation .btnLogin-popup {
+    width: 110px;
+    height: 35px;
+    font-size: 0.9em;
+    margin-left: 20px;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px 0;
+  }
+
+  .menu-toggle {
+    display: block; 
+}
+
+  .logo {
+    width: 70px;
+  }
+
+  /* Show toggle icon for screen sizes smaller than 768px */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    cursor: pointer;
+  }
+
+  .menu-toggle ion-icon {
+    font-size: 2.5em;
+    color: #fff;
+  }
+
+  .navigation {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+  }
+
+  .navigation.active {
+    left: 0;
+    padding: -100px 0;
+  }
+
+  .navigation a {
+    top: 0;
+    font-size: 1.3em;
+    margin: 20px 0;
+  }
+
+  .navigation .btnLogin-popup {
+    width: 80%;
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: none;
+    text-align: center;
+  }
+
+  .dropdown-content a {
+    padding: 10px 0;
+    font-size: 1.1em;
+    color: #fff;
+  }
+
+  .dropdown-content a:hover {
+    color: #f7327a;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0px 10px;
+  }
+  
+  .logo {
+    width: 60px;
+  }
+
+  .navigation a {
+    font-size: 1.2em;
+  }
+
+  .navigation .btnLogin-popup {
+    width: 100px;
+    height: 30px;
+    font-size: 1.1em;
+  }
+
+  .menu-toggle ion-icon {
+    font-size: 2.5em;
+  }
+}
+
+/* Toggle button animation */
+.menu-toggle {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-toggle.open {
+  transform: rotate(90deg);
+}
+
+.WPintro {
+  background-image: url('../Photo/grey.jpg');
+  background-size: cover; /* Ensures the background covers the entire section */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background from repeating */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.WPcontent {
+  background-image: url('../Photo/grey.jpg');
+  background-size: cover; /* Ensures the background covers the entire section */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background from repeating */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.WPintro {
+  width: 100%;
+  min-height: 450px;
+  position: relative;
+  background-color: grey;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-position-x: 50%;
+  background-position-y:50%; ;
+  background-image: url('../Photo/workouts.jpg')
+}
+
+.WPintro .overlay{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.WPintro h1{
+  max-width: 1000px;
+  font-size: 50px;
+  letter-spacing: 0;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.WPintro p{
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 900px;
+  font-size: 20px;
+  font-family: "roboto-bold", sans-serif;
+  text-align: center;
+  font-weight: 700;
+}
+
+.WPcontent .taxonomy-heading{
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 800;
+  font-size: 40px;
+  color: white;
+  font-family: "roboto-bold", sans-serif;
+  text-transform: uppercase;
+}
+
+.WPcontent .subheading-text{
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto 25px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.WPcontent p{
+  margin-bottom: 1rem;
+  font-size: inherit;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+.WPcontent .grid-x{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.WPcontent .mainpage-category-list .cell{
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  font-weight: 800;
+}
+
+.WPcontent .small-up-2 .cell {
+  width: 50%;
+
+}
+
+/* Base styles for the cell */
+.WPcontent .cell {
+  flex: 0 0 auto;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  perspective: 1000px; /* This creates the 3D space for the flip */
+}
+
+/* Flip container and flipper styles */
+.WPcontent .flip-container {
+  position: relative;
+  width: 100%;
+  height: 433px; /* Adjust height as needed */
+}
+
+.WPcontent .flipper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.WPcontent .flip-container:hover .flipper {
+  transform: rotateY(180deg); /* Rotates the container when hovered */
+}
+
+/* Front and back styles */
+.WPcontent .front, .WPcontent .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.WPcontent .back {
+  transform: rotateY(180deg);
+}
+
+.WPcontent .back img{
+  transform: rotateY(180deg);
+  filter: brightness(50%);
+}
+
+.WPcontent .image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Text color */
+  font-size: 24px; /* Text size */
+  font-weight: bold; /* Text style */
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Semi-transparent background */
+  padding: 10px; /* Optional: Padding around the text */
+  border-radius: 5px; /* Optional: Rounded corners */
+}
+
+.WPintro h1{
+  width: 100%;
+  font-size: 50px;
+  letter-spacing: 0;
+  margin-bottom: 25px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  font-weight: 800;
+}
+
+.WPcontent img{
+  display: inline-block;
+  vertical-align: middle;
+  height: 500px;
+  width: 100%;
+}
+
+.WPcontent h4{
+  margin-top: 50px;
+}
+
+@media screen and (min-width: 90%) {
+  .content {
+      padding: 0px;
+  }
+}
+
+.table1 {
+  background-image: url('../Photo/table1.jpg');
+  background-size: cover; /* Ensures the background covers the entire section */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background from repeating */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.table2 {
+  background-image: url('../Photo/table2.jpg');
+  background-size: cover; /* Ensures the background covers the entire section */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background from repeating */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  margin-top: -30px; /* Adjust this value as needed */
+}
+
+
+.table1 .field{
+  font-family: "roboto-regular", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 25px;
+  text-align: justify;
+  text-justify: inter-word;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 25px;
+  border-left: 5px solid rgb(153, 71, 0);
+  
+}
+
+.table1 .node-summary {
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.table1 .node-summary .node-summary-content {
+  margin: 0 15px 15px;
+  padding-left: 15px;
+  font-family: "roboto-medium", sans-serif;
+  font-size: 24px;
+}
+
+
+.table1 h1{
+  padding-top: 50px;
+  width: 100%;
+  font-size: 50px;
+  letter-spacing: 0;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  font-weight: 800;
+  color:rgba(225, 109, 15, 0.859);
+}
+
+.table1 .feature-image {
+  text-align: center;
+  border: 5px solid white; /* Optional: For a solid frame */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adjust for shadow effect */
+  margin: 5%;
+
+}
+
+.table1 table{
+  padding: 15px;
+  border-top: 5px solid rgb(153, 71, 0);
+  margin-left: 22%;
+  margin-right: 22%;
+  width: 55%;
+  border-radius: 2px;
+  background-color: rgba(97, 87, 87, 0.685); /* Light grey background */
+  border-collapse: collapse; /* Merge borders */
+}
+
+
+
+.table1 td {
+  font-family: "opensans-bold", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  color: #f9be70;
+  padding: 10px;
+  border-bottom: 1px solid #fefbfa; /* Subtle horizontal line */
+}
+
+.table1 tr:first-child{
+  background-color: rgb(46, 43, 41);
+}
+
+.table1 td:last-child {
+  font-family: "opensans-bold", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  border-right: none; /* Remove the right border from the last cell */
+  background-color: rgba(229, 164, 103, 0.314);
+}
+
+.table1 tr:last-child td {
+  border-bottom: none; /* Remove the bottom border from the last row */
+}
+
+.table1 .column0 { color: rgb(248, 149, 50); }
+
+.table2 .column1 { width: 70%; color: rgb(248, 149, 50); }
+
+.table2 .column2 { width: 10%; color: rgb(248, 149, 50);}
+
+.table2 .column3 { width: 20%; color: rgb(248, 149, 50);}
+
+.table1 h2{
+  font-family: "opensans-bold", sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 45px;
+  width: 40%;
+  margin-left: 22%;
+  margin-top: 30px;
+  color: rgb(213, 145, 73);
+}
+
+.table2 h2{
+  font-family: "opensans-bold", sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 45px;
+  width: 40%;
+  margin-left: 22%;
+  margin-top: 30px;
+  color: rgb(213, 145, 73);
+}
+
+.table1 p, .table2 p{
+  font-family: "opensans-bold", sans-serif;
+  font-size: 20px;
+  width: 55%;
+  margin-left: 22%;
+  margin-right: 22%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: justify;
+  text-justify: inter-word;
+  padding-bottom: 20px;
+}
+
+.table2 h4{
+  font-family: "opensans-bold", sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 25px;
+  width: 40%;
+  margin-left: 22%;
+  margin-top: 30px;
+  color: white;
+}
+
+.table2 table {
+  margin-left: 22%;
+  margin-right: 22%;
+  width: 55%;
+  background-color: rgba(97, 87, 87, 0.685); /* White background */
+  border-collapse: collapse; /* Merge borders */
+}
+
+.table2 td {
+  font-family: "opensans-bold", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  padding: 10px;
+  border-bottom: 1px solid #d3d3d3; /* Subtle horizontal line */
+}
+
+.table2 td:last-child {
+  font-family: "opensans-bold", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  border-right: none; /* Remove the right border from the last cell */
+}
+
+.table2 tr:nth-child(even) {
+  font-family: "opensans-bold", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  background-color: #2e2c2cdc; /* Light grey background for even rows */
+}
+
+.table2 tr:first-child {
+  font-family: "opensans-bold", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 700;
+  background-color:  rgb(133, 86, 54); /* Blue background for the first row */
+  color: white; /* White text color */
+}
+
+.table2 tr:last-child td {
+  font-family: "opensans-bold", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+
+  border-bottom: none; /* Remove the bottom border from the last row */
+}
+
+
+.footer {
+  padding: 2rem 0;
+  background: #111;
+  color: #fff;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-links,
+.footer-social,
+.footer-contact {
+  flex: 1;
+  margin-bottom: 1.5rem;
+  min-width: 220px;
+}
+
+.footer-contact p {
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul ol{
+  padding-left: 20px;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #f7327a;
+}
+
+.footer-social .social-links a {
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.4rem;
+  transition: all 0.3s ease;
+}
+
+.footer-social .social-links a:hover {
+  color: #f7327a;
+  border-color: #f7327a;
+}
+
+.footer-contact p {
+  margin: 0.5rem 0;
+}
+
+.footer-contact p i {
+  margin-right: 0.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0;
+  background: #000;
+  font-size: 0.85rem;
+  border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+  width: 100%;
+  margin: 0;
+  color: #bbb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
